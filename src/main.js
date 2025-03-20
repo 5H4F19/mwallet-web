@@ -14,10 +14,6 @@ import i18n, { setLanguage } from './lib/i18n/i18n.js';
 
 async function main() {
   document.addEventListener('touchstart', () => {}, false); // fix safari :active css bug
-  if (import.meta.env.VITE_BUILD_TYPE === 'phonegap') {
-    await (await import('../../phonegap/lib/deviceready.js')).default();
-  }
-
   const app = createApp({ App, router });
   await createAccount({ app, router });
   await setLanguage();
