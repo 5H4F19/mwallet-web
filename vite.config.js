@@ -19,10 +19,10 @@ export default defineConfig(({ mode }) => {
       strictPort: true,
       proxy: {
         "/api": {
-          target: "http://localhost:8080",
-          headers: isHttps ? { "X-Forwarded-Proto": "https" } : {},
+          target: "https://coin.space",
+          headers: isHttps ? { "X-Forwarded-Proto": "https","Content-Security-Policy": `connect-src 'self' https://*.${process.env.VITE_API_HOST}/;` } : {"Content-Security-Policy": `connect-src 'self' https://*.${process.env.VITE_API_HOST}/;`},
         },
-        "/assets/crypto": { target: "http://localhost:8080" },
+        "/assets/crypto": { target: "http://coin.space" },
       },
     },
     base: process.env.BASE_URL || "/",
