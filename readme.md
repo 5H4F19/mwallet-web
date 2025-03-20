@@ -5,5 +5,5 @@
 <h1 align="center">M WALLET</h1>
 
 <p align="center">
-  A brief and compelling description of your web app. 
+  A secure, user-friendly crypto wallet app.
 </p>
